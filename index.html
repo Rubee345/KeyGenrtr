@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate your key</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin-top: 100px;
+        }
+        .container {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: 300px;
+            margin: 0 auto;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .random-word {
+            font-size: 24px;
+            margin: 20px 0;
+            color: #333;
+        }
+        .generate-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .generate-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Key Gen</h1>
+        <div class="random-word" id="randomWord">Press to generate key.</div>
+        <button class="generate-btn" onclick="generateRandomWord()">Generate</button>
+    </div>
+
+    <script>
+        function generateRandomWord() {
+            const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+            let randomWord = '';
+            
+            for (let i = 0; i < 10; i++) {
+                const randomIndex = Math.floor(Math.random() * letters.length);
+                randomWord += letters[randomIndex];
+            }
+            
+            document.getElementById('randomWord').innerText = randomWord;
+        }
+    </script>
+
+</body>
+</html>
